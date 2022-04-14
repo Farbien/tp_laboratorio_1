@@ -10,14 +10,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
 
-int mostrarMenu(float x,float y,float z);
-int pedirKilometros(float km);
-float pedirPrecioAr(float ar);
-float pedirPrecioLa(float la);
-int calcularCostos(float km,float ar,float la);
-int mostrarInformes(float x,float y,float z);
-int cargaForzada(void);
+
+int MostrarMenu(float x,float y,float z);
+int PedirKilometros(float km);
+float PedirPrecioAr(float ar);
+float PedirPrecioLa(float la);
+int CalcularCostos(float km,float ar,float la);
+int MostrarInformes(float x,float y,float z);
+int CargaForzada(void);
+void Pausar(void);
 
 
 #endif /* FUNCIONES_H_ */

@@ -12,7 +12,7 @@
         Fecha de entrega 16/04/2022
 
 *******************************************************************************/
-#include <stdio.h>
+
 #include "funciones.h"
 
 
@@ -23,42 +23,46 @@ int main()
     float y;  // precio km Aerolineas
     float z;  // precio km latam
 
-    x=0;
+        x=0;
     y=0;
     z=0;
 
+    setbuf(stdout,0);
+
     printf("Bienvenido al sistema de carga de datos\n\n");
 
-    opcionMenu0=mostrarMenu(x,y,z);
+    opcionMenu0=MostrarMenu(x,y,z);
 
     while(opcionMenu0!=6){
         switch(opcionMenu0){
             case 1:
-                x=pedirKilometros(x);
-
-                opcionMenu0=mostrarMenu(x,y,z);
+            	x=PedirKilometros(x);
+            	system("cls");
+                opcionMenu0=MostrarMenu(x,y,z);
             break;
             case 2:
-                y=pedirPrecioAr(y);
-                z=pedirPrecioLa(z);
-
-                opcionMenu0=mostrarMenu(x,y,z);
+            	y=PedirPrecioAr(y);
+                z=PedirPrecioLa(z);
+                system("cls");
+                opcionMenu0=MostrarMenu(x,y,z);
             break;
             case 3:
-                opcionMenu0=calcularCostos(x,y,z);
-
-                opcionMenu0=mostrarMenu(x,y,z);
+            	opcionMenu0=CalcularCostos(x,y,z);
+            	system("cls");
+                opcionMenu0=MostrarMenu(x,y,z);
             break;
             case 4:
-                opcionMenu0=mostrarInformes(x,y,z);
-                opcionMenu0=mostrarMenu(x,y,z);
+                opcionMenu0=MostrarInformes(x,y,z);
+                system("cls");
+                opcionMenu0=MostrarMenu(x,y,z);
             break;
             case 5:
-                opcionMenu0=cargaForzada();
-                opcionMenu0=mostrarMenu(x,y,z);
+            	opcionMenu0=CargaForzada();
+            	system("cls");
+                opcionMenu0=MostrarMenu(x,y,z);
             break;
             default:
-                 opcionMenu0=mostrarMenu(x,y,z);
+
             break;
         }
     }
