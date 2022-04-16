@@ -1,6 +1,6 @@
 #include "funciones.h"
 
-#define BTC 4480791.02  // Cotización 14/04/22 17:20
+#define BTC 4610734.81  // Cotización 16/04/22 20:42
 #define PAGOTD 0.90  // proporcion precio con descueto e intereses
 #define PAGOTC 1.25  // proporcion precio con descueto e intereses
 
