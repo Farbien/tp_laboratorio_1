@@ -25,6 +25,9 @@ void Pausar(){
 }
 
 int MostrarMenu(float x,float y,float z){
+     ///Esta función  muestra las opciones que se ofrecen como menú principal, muestra los valores cargados
+     /// de cantidad de kilómetros, y precios por kilómetro de las compañías aéreas, y solicita el ingreso de una
+     /// opción del menú. Luego devuelve un entero validado entre las opciones de 1 a 6.
 
 
     int opcion;
@@ -49,13 +52,14 @@ int MostrarMenu(float x,float y,float z){
         }
         printf("Opci%cn elegida %d: \n",162,opcion);
         return opcion;
-        ///Esta función  muestra las opciones que se ofrecen como menú principal, muestra los valores cargados
-        /// de cantidad de kilómetros, y precios por kilómetro de las compañías aéreas, y solicita el ingreso de una
-        /// opción del menú. Luego devuelve un entero validado entre las opciones de 1 a 6.
+
     }
 
 int PedirKilometros(float km){
-    printf("Ingrese los kil%Cmetros: ",162);
+    ///La función pide el ingreso de la cantidad de kilómetros que demandará el viaje, valida
+    /// que el valor no sea negativo o cero, y lo devuelve al menú.
+
+	printf("Ingrese los kil%Cmetros: ",162);
     fflush(stdin);
     scanf("%f",&km);
     while(km<0){
@@ -69,12 +73,13 @@ int PedirKilometros(float km){
     system("pause");
 
     return km;
-    ///La función pide el ingreso de la cantidad de kilómetros que demandará el viaje, valida
-    /// que el valor no sea negativo o cero, y lo devuelve al menú.
+
 }
 
 
 float PedirPrecioAr(float ar){
+    /// La función pide precio por kilómetro para Aerolineas Argentinas, valida que el mismo no sea un valor
+    ///  negativo o cero, y lo devuelve al menú.
     printf("Ingrese precio por kil%Cmetro para Aerol%cneas Argentinas: ",162,161);
     fflush(stdin);
     scanf("%f",&ar);
@@ -86,11 +91,12 @@ float PedirPrecioAr(float ar){
 		system("pause");
 
 		return ar;
-	    /// La función pide precio por kilómetro para Aerolineas Argentinas, valida que el mismo no sea un valor
-	    ///  negativo o cero, y lo devuelve al menú.
+
 		}
 
 float PedirPrecioLa(float la){
+    /// La función pide precio por kilómetro para Latam, valida que el mismo no sea un valor
+    ///  negativo o cero, y lo devuelve al menú.
 
     printf("Ingrese precio por kil%Cmetro para Latam: ",162);
     fflush(stdin);
@@ -104,15 +110,14 @@ float PedirPrecioLa(float la){
 
     return la;
 
-    /// La función pide precio por kilómetro para Latam, valida que el mismo no sea un valor
-    ///  negativo o cero, y lo devuelve al menú.
     }
 
 int CalcularCostos(float km,float ar,float la){
 
-    int rta;
+    ///La función calcula los costos de acuerdo a los parámetros recibidos y muestra si pudo realizar los cálculos.
+    /// Si no pudo hacerlos, muestra un mensaje de error solicitando la verificación de los datos cargados.
 
-
+	int rta;
 
     if(km>0 && ar>0 && la>0){
 
@@ -148,14 +153,15 @@ int CalcularCostos(float km,float ar,float la){
 
 
     return rta;
-
-    ///La función calcula los costos de acuerdo a los parámetros recibidos y muestra si pudo realizar los cálculos.
-    /// Si no pudo hacerlos, muestra un mensaje de error solicitando la verificación de los datos cargados.
     }
 
 
 
 int MostrarInformes(float x,float y,float z){
+
+
+	///La función solo muestra por pantalla los cálculos realizados en la función CalcularCostos, donde
+	/// puede apreciarse los costos del viaje para cada tipo de pago, con una comparación entre conpañías.
 
     int rta;
 
@@ -182,12 +188,12 @@ int MostrarInformes(float x,float y,float z){
    return rta;
 
 
-   ///La función solo muestra por pantalla los cálculos realizados en la función CalcularCostos, donde
-   /// puede aprecuarse los constos del viaje para cada tipo de pago, con una comparaión entre conpañías.
     }
 
 
 int CargaForzada(void){
+    ///Esta función realiza las operaciones como lo hace la función CalcularCostos con la diferencia que los cálculos
+    ///  se realizan con valores prestablecidos (no variables). Luego muestra los cálculos.
 
 	int rta;
     float km=7090;
@@ -236,8 +242,5 @@ int CargaForzada(void){
     rta=0;
 
     return rta;
-    ///Esta función realiza las operaciones como lo hace la función CalcularCostos con la diferencia que los cálculos
-    ///  se realizan con valores prestablecidos (no variables). Luego muestras los cálculos.
-    ///
     }
 
