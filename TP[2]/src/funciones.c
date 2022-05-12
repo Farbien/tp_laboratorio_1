@@ -206,9 +206,9 @@ int addPassenger(ePassenger pasajero[], int tam) {
 	printf("Ingrese el c%cdigo de vuelo: ",162);
 	fflush(stdin);
 	gets( aux[indiceLibre].flyCode);
-	printf("Ingrese el tipo de pasajero: ");
+	printf("Ingrese el tipo de pasajero (1-First, 2-Business, 3-Economy): ");
 	scanf("%d", &aux[indiceLibre].typePassanger);
-	printf("Ingrese estado de vuelo: ");
+	printf("Ingrese estado de vuelo (1-Activo, 2-Usado, -1-Cancelado): ");
 	scanf("%d", &aux[indiceLibre].statusFlight);
 
 	pasajero[indiceLibre] =  aux[indiceLibre];
